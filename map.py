@@ -3,7 +3,7 @@ from tiles import Tiles
 
 
 class Map:
-    def __init__(self,screen, file_map, platforms_top, platforms_bottom, left_walls, right_walls, floor_tiles,brick_tiles,mystery_tiles,pole, clouds, hills, bushes, pipes, metal_tiles):
+    def __init__(self,screen, file_map, platforms_top, platforms_bottom, left_walls, right_walls, floor_tiles,brick_tiles,mystery_tiles,pole, clouds, hills, bushes, pipes, metal_tiles, castle):
         file = open(file_map, 'r')
         lines = file.readlines()
 
@@ -112,6 +112,10 @@ class Map:
                     flag_pole = Tiles(screen,x,y+32,'pole')
                     pole.add(flag_pole)
 
+                if p == 'g':
+                    flag = Tiles(screen,x-16,y+36, 'flag')
+                    pole.add(flag)
+
                 if p == 'c':
                     cloud1 = Tiles(screen,x,y+32, 'cloud1')
                     clouds.add(cloud1)
@@ -143,6 +147,10 @@ class Map:
                 if p == 'i':
                     bush3 = Tiles(screen,x,y+32, 'bush3')
                     bushes.add(bush3)
+
+                if p == 's':
+                    cast = Tiles(screen,x,y+32, 'castle')
+                    castle.add(cast)
 
                 if p == '\n':
                     y += 32

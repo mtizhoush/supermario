@@ -25,6 +25,8 @@ class Tiles(Sprite):
             self.image = pygame.image.load('resources/Images/metalTile.gif')
         if tile_type == 'pole':
             self.image = pygame.image.load('resources/Images/pole.gif')
+        if tile_type == 'flag':
+            self.image = pygame.image.load('resources/Images/flag.gif')
         if tile_type == 'bighill':
             self.image = pygame.image.load('resources/Images/hillBig.gif')
         if tile_type == 'smallhill':
@@ -45,6 +47,8 @@ class Tiles(Sprite):
             self.image = pygame.image.load('resources/Images/bush2.gif')
         if tile_type == 'bush3':
             self.image = pygame.image.load('resources/Images/bush3.gif')
+        if tile_type == 'castle':
+            self.image = pygame.image.load('resources/Images/castle.gif')
 
         self.rect = self.image.get_rect()
         self.mask = pygame.mask.from_surface(self.image)

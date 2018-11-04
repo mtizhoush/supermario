@@ -39,13 +39,14 @@ def run_game():
     clouds = Group()
     hills = Group()
     bushes = Group()
+    castle = Group()
     
     # create a viewport and pass all objects into it for
     # easier management
     viewport = Group()
 
     # create our map level and all objects within it
-    map = Map(screen, 'resources/map.txt', platforms_top, platforms_bottom, left_walls, right_walls, floor_tiles, brick_tiles, mystery_tiles, pole, clouds, hills, bushes, pipes, metal_tiles)
+    map = Map(screen, 'resources/map.txt', platforms_top, platforms_bottom, left_walls, right_walls, floor_tiles, brick_tiles, mystery_tiles, pole, clouds, hills, bushes, pipes, metal_tiles, castle)
 
     entity_gamemaster = EntityGameMaster()
     mushroom = Mushroom(screen, floor_tiles, left_walls, right_walls)
@@ -71,6 +72,7 @@ def run_game():
     viewport.add(bushes)
     viewport.add(pipes)
     viewport.add(metal_tiles)
+    viewport.add(castle)
     viewport.add(entity_gamemaster.fireflowers)
     viewport.add(entity_gamemaster.mushrooms)
     viewport.add(entity_gamemaster.one_up_mushrooms)
@@ -103,6 +105,7 @@ def run_game():
         bushes.update()
         pipes.update()
         metal_tiles.update()
+        castle.update()
         fireballs.update(platforms_top,left_walls,right_walls)
         # -------------------------------dddd------------------------------
 
